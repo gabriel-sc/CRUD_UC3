@@ -19,7 +19,7 @@ return [
         'dev' => [
             'adapter' => $_ENV['mysql'] ?? 'mysql',
             'host' => $_ENV['127.0.0.1'] ?? '127.0.0.1',
-            'name' => $_ENV['crud_main'] ?? 'meu_crud_db',
+            'name' => $_ENV['crud_main'] ?? 'crud_main',
             'user' => $_ENV['root'] ?? 'root',
             'pass' => $_ENV[''] ?? '', // Usa a senha do .env, ou string vazia
             'port' => (int)($_ENV['3306'] ?? 3306),

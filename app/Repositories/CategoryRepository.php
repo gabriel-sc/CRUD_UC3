@@ -34,14 +34,16 @@ class CategoryRepository
 
     public function create(Category $category): int
     {
-        $stmt = Database::getConnection()->prepare("INSERT INTO categories (name, text) VALUES (?, ?)");
+        $stmt = Database::getConnection()->prepare("INSERT INTO categories (name, description) VALUES (?, ?)
+");
         $stmt->execute([$category->name, $category->text]);
         return (int)Database::getConnection()->lastInsertId();
     }
 
     public function update(Category $category): bool
     {
-        $stmt = Database::getConnection()->prepare("UPDATE categories SET name = ?, text = ? WHERE id = ?");
+        $stmt = Database::getConnection()->prepare("UPDATE categories SET name = ?, description = ? WHERE id = ?
+");
         return $stmt->execute([$category->name, $category->text, $category->id]);
     }
 
