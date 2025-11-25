@@ -21,9 +21,9 @@ class Database
             $dsn = sprintf(
                 "%s:host=%s;port=%s;dbname=%s;charset=utf8mb4",
                 $_ENV['mysql'] ?? 'mysql',
-                $_ENV['127.0.0.1'] ?? '127.0.0.1',
-                $_ENV['3306'] ?? '3306',
-                $_ENV['meu_crud_db'] ?? 'crud_php'
+                $_ENV['127.0.0.1'] ?? ,
+                $_ENV['3306'] ??,
+                $_ENV['meu_crud_db'] ??
             );
             self::$conn = new PDO($dsn, $_ENV['root'] ?? 'root', $_ENV['DB_PASS'] ?? '');
             self::$conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
