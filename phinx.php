@@ -18,11 +18,11 @@ return [
         'default_environment' => 'dev',
         'dev' => [
             'adapter' => $_ENV['mysql'] ?? 'mysql',
-            'host' => $_ENV['D127.0.0.1'] ?? '127.0.0.1',
-            'name' => $_ENV['meu_crud_db'] ?? 'meu_crud_db',
+            'host' => $_ENV['127.0.0.1'] ?? '127.0.0.1',
+            'name' => $_ENV['crud_main'] ?? 'meu_crud_db',
             'user' => $_ENV['root'] ?? 'root',
-            'pass' => $_ENV['12345'] ?? '', // Usa a senha do .env, ou string vazia
-            'port' => (int)($_ENV['DB_PORT'] ?? 3306),
+            'pass' => $_ENV[''] ?? '', // Usa a senha do .env, ou string vazia
+            'port' => (int)($_ENV['3306'] ?? 3306),
             'charset' => 'utf8mb4',
             'collation' => 'utf8mb4_unicode_ci'
         ]
