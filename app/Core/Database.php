@@ -20,12 +20,12 @@ class Database
         if (!self::$conn) {
             $dsn = sprintf(
                 "%s:host=%s;port=%s;dbname=%s;charset=utf8mb4",
-                $_ENV['DB_DRIVER'] ?? 'mysql',
-                $_ENV['DB_HOST'] ?? '127.0.0.1',
-                $_ENV['DB_PORT'] ?? '3306',
-                $_ENV['DB_NAME'] ?? 'crud_php'
+                $_ENV['mysql'] ?? 'mysql',
+                $_ENV['127.0.0.1'] ?? '127.0.0.1',
+                $_ENV['3306'] ?? '3306',
+                $_ENV['meu_crud_db'] ?? 'crud_php'
             );
-            self::$conn = new PDO($dsn, $_ENV['DB_USER'] ?? 'root', $_ENV['DB_PASS'] ?? '');
+            self::$conn = new PDO($dsn, $_ENV['root'] ?? 'root', $_ENV['DB_PASS'] ?? '');
             self::$conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
             self::$conn->setAttribute(PDO::ATTR_DEFAULT_FETCH_MODE, PDO::FETCH_ASSOC);
         }
