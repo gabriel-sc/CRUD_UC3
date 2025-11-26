@@ -17,12 +17,12 @@ return [
         'default_migration_table' => 'phinxlog',
         'default_environment' => 'dev',
         'dev' => [
-            'adapter' => $_ENV['mysql'] ?? 'mysql',
-            'host' => $_ENV['127.0.0.1'] ?? '127.0.0.1',
-            'name' => $_ENV['crud_main'] ?? 'crud_main',
-            'user' => $_ENV['root'] ?? 'root',
-            'pass' => $_ENV[''] ?? '', // Usa a senha do .env, ou string vazia
-            'port' => (int)($_ENV['3306'] ?? 3306),
+            'adapter' => $_ENV['DB_DRIVER'] ?? 'mysql',
+            'host' => $_ENV['DB_HOST'] ?? '127.0.0.1',
+            'name' => $_ENV['DB_NAME'] ?? 'crud_php',
+            'user' => $_ENV['DB_USER'] ?? 'root',
+            'pass' => $_ENV['DB_PASS'] ?? '',
+            'port' => (int)($_ENV['DB_PORT'] ?? 3306),
             'charset' => 'utf8mb4',
             'collation' => 'utf8mb4_unicode_ci'
         ]
